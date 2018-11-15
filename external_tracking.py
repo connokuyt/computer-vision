@@ -93,7 +93,7 @@ def cg_states(q1, q2, q3):
 
 
 # SELECT FILE + CROP LEFT ARGUMENT
-cap = cv2.VideoCapture('external.mov')
+cap = cv2.VideoCapture('external_raw.mov')
 video_width = int(cap.get(3))
 video_height = int(cap.get(4))
 fps = cap.get(5)
