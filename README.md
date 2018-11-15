@@ -26,15 +26,17 @@ Other authors have investigated the same problem. In particular, [Botha et al. 2
 
 The paper is structured as follows: Section 1 discusses the basic rationale of the algorithm. Section 2 details the algorithm implementation. The focus of this contribution is on the sensor fusion approach, and not the computer vision algorithm for which a standard approach in the literature is employed.  Section 3 describes the experimental setup that is then employed in Section 4 for the final validation. 
 
-## Section 1: Eestimation Algorithm
-
-This section explains the side slip angle $\beta$ estimation algorithm. To estimate $\beta$, one essentially needs to estimate the longitudinal and lateral velocity in the body reference frame: 
 
 
 
 (setf comment-continue " ")
 (setf comment-style 'multi-line)
 <!--
+
+## Section 1: Eestimation Algorithm
+
+This section explains the side slip angle (beta) estimation algorithm. To estimate beta, one essentially needs to estimate the longitudinal and lateral velocity in the body reference frame: 
+
 \begin{equation}\label{eq:x}
 x = {\left[ {\begin{array}{*{20}{c}}{{V_x}}&{{V_y}}\end{array}} \right]^T}.
 \end{equation}
