@@ -17,12 +17,4 @@ Sideslip estimation based on _stock_ sensors (low-cost industry standard sensors
 Most of the approaches in the literature employ standard inertial or mechanical sensors (encoders). Recently, thanks to the introduction of advanced driver assistance systems (ADAS) cameras have become standard sensors in cars. Currently, cameras are mainly used to detect other road users and obstacles in sufficient detail to make tactical decisions. However, the data coming from the cameras can  be used to extract motion information to support sideslip estimation.
 
 
-![alt text](https://github.com/n48.png "Logo Title")
-
-\begin{figure}[h]
-\centering
-\adjustbox{trim={0} {0pt} {0} {45pt},clip}{
-\includegraphics[width=\columnwidth]{figures/objectives}}
-\caption{Schematic representation of the used reference frames and RC vehicle showing the position of the camera.}
-\label{fig:objectives}
-\end{figure}
+![alt text](objectives.png "Schematic representation of the used reference frames and RC vehicle showing the position of the camera.")
