@@ -25,29 +25,3 @@ This paper proposes a side slip estimation algorithm that fuses the information 
 Other authors have investigated the same problem. In particular, [Botha et al. 2016](http://proceedings.asmedigitalcollection.asme.org/proceeding.aspx?articleid=2591696) develops a method based on a stereo camera; [Harchut et al. 2009](http://proceedings.asmedigitalcollection.asme.org/proceeding.aspx?articleid=1648272) employs a mono-camera and, similarly to our contribution, uses colored objects placed on the road to estimate sideslip angle. However the cited approach only uses the information from the camera and no sensor fusion is carried out. Finally, [Wang et al. 2012](https://ieeexplore.ieee.org/document/6548052) run a fusion algorithm that however requires information on the vehicle dynamic model (namely cornering stiffness). Differently from the previous contributions on the subject matter, the approach employed in this paper uses a mono camera and runs a kinematic-based sensor fusion. 
 
 The paper is structured as follows: Section 1 discusses the basic rationale of the algorithm. Section 2 details the algorithm implementation. The focus of this contribution is on the sensor fusion approach, and not the computer vision algorithm for which a standard approach in the literature is employed.  Section 3 describes the experimental setup that is then employed in Section 4 for the final validation. 
-
-## Section 1: Eestimation Algorithm
-
-This section explains the side slip angle $\beta$ estimation algorithm. To estimate $\beta$, one essentially needs to estimate the longitudinal and lateral velocity in the body reference frame: 
-%%%%%%%%%%%%%%%%%%%%
-\begin{equation}\label{eq:x}
-x = {\left[ {\begin{array}{*{20}{c}}{{V_x}}&{{V_y}}\end{array}} \right]^T}.
-\end{equation}
-%%%%%%%%%%%%%%%%%%%%
-using available sensors. 
-\begin{figure}[thpb]
-\centering
-\adjustbox{trim={0} {0pt} {0} {45pt},clip}
-{\includegraphics[width=\columnwidth]{figures/quantities}}
-\caption{Summary of the available sensors measured quantities put out by the sensor suite.}
-\label{fig:quantities}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%
-Figure \ref{fig:quantities} outlines the sensors available for estimation:
-\begin{itemize}
-\item Planar accelerations measured at the center of gravity: $a_x$, $a_y$.
-\item Yaw angular rate $\omega_z$.
-\item The average front axle velocity $V_{\delta}$. 
-\item The steering angle $\delta$.
-\item The camera feed over a given Field of View (FoV). The Computer Vision Algorithm tracks $N$ feature points on the ground. As it will become clear, for each tracked point $q_n$, its distance from $CG$ ($x_n$,$y_n$), as well as its relative velocity components (in the camera reference) ($V_{xn}$,$V_{yn}$) [ m s$^{-1}$ ] are calculated.
-\end{itemize}
